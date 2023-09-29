@@ -14,6 +14,10 @@
 
 .right{
     right: 0;
-    background-color: #bcbcbc;
+    background-color: rgb(245, 245, 237);
     width: 30%;
+}
+.h1{
+    position: absolute;
+    z-index: 2;
 }
