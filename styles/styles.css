@@ -21,3 +21,11 @@
     position: absolute;
     z-index: 2;
 }
+
+.hidden {
+    display: none;
+}
+
+.full-width {
+    width: 100%;
+}
