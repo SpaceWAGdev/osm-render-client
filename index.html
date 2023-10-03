@@ -8,26 +8,49 @@
     <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
     <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
     
+    <!-- Shoelace Components -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.9.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.9.0/cdn/shoelace-autoloader.js"></script>
+
     <!-- Custom Styles & JS -->
     <link rel="stylesheet" href="styles/styles.css">
     <script src="index.js" defer></script>
 </head>
 <body>
-    <h1 class="h1">OSM Map Client</h1>
-    <div class="split left" id="capture">
-        <div id='map' style='width: 100%; height: 100%;'></div>
-        <script>
-        var map = new maplibregl.Map({
-            container: 'map',
-            style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-            center: [-74.5, 40], // starting position [lng, lat]
-            zoom: 3, // starting zoom
-            preserveDrawingBuffer : true
-        });
-        </script>
-    </div>
-    <div class="split right"> 
-        <button onclick="preparePrint()">Print</button>
-    </div>
-</body>
+    <!-- <h1 class="h1">OSM Map Client</h1> -->
+    <sl-tab-group>
+        <sl-tab slot="nav" panel="general">General</sl-tab>
+        <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+        <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+      
+        <sl-tab-panel name="general">
+            <sl-split-panel>
+                <div
+                  slot="start"
+                  style="background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+                >
+                <div id='map' style='width: 100%; height: 100%;'></div>
+                <script>
+                    var map = new maplibregl.Map({
+                        container: 'map',
+                        style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
+                        center: [-74.5, 40], // starting position [lng, lat]
+                        zoom: 3, // starting zoom
+                        preserveDrawingBuffer : true
+                    });
+                </script>
+                </div>
+                <div
+                  slot="end"
+                  style="background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;"
+                >
+                  End
+                </div>
+              </sl-split-panel>
+              
+        </sl-tab-panel>
+        <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+        <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+      </sl-tab-group>   
+    </body>
 </html>
