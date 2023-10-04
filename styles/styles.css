@@ -14,7 +14,7 @@
 
 .right{
     right: 0;
-    background-color: rgb(245, 245, 237);
+    /* background-color: rgb(245, 245, 237); */
     width: 30%;
 }
 .h1{
@@ -24,13 +24,4 @@
 
 .hidden {
     display: none;
-}
-
-.full-width {
-    width: 100%;
-}
-
-sl-tab-group {
-    height: 100px;
-    position: relative;
 }
