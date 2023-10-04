@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=s, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' unpkg.com; style-src 'unsafe-inline' 'self' unpkg.com;">
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' unpkg.com; style-src 'unsafe-inline' 'self' unpkg.com;"> -->
 
     
     <!-- MapLibreGL JS  -->
-    <script defer src='maplibre-gl.js'></script>
-    <link href='maplibre-gl.css' rel='stylesheet' />
+    <link href='maplibre-gl-dist/maplibre-gl.css' rel='stylesheet' />
+    <script defer src='maplibre-gl-dist/maplibre-gl.js'></script>
     
     <!-- Bootstrap -->
     <link href="bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,15 +24,6 @@
     
     <div class="split left">
       <div id='map' style='width: 100%; height: 100%;'></div>
-      <script>
-        var map = new maplibregl.Map({
-          container: 'map',
-          style: 'https://demotiles.maplibre.org/style.json', // stylesheet location
-          center: [-74.5, 40], // starting position [lng, lat]
-          zoom: 3, // starting zoom
-          preserveDrawingBuffer : true
-        });
-        </script>
     </div>
     <div class="split right">
       <div class="accordion" id="accordionPanelsStayOpenExample">
