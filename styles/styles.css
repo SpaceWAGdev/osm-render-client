@@ -29,3 +29,8 @@
 .full-width {
     width: 100%;
 }
+
+sl-tab-group {
+    height: 100px;
+    position: relative;
+}
