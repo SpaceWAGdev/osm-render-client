@@ -18,7 +18,7 @@ function preparePrint() {
 console.log(maplibregl);
         var map = new maplibregl.Map({
           container: 'map',
-          style: 'map-styles/default_style.json', // stylesheet location
+          style: 'map-styles/osm-bright.json', // stylesheet location
           center: [-74.5, 40], // starting position [lng, lat]
           zoom: 3, // starting zoom
           preserveDrawingBuffer : true
