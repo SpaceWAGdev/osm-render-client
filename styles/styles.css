@@ -25,3 +25,7 @@
 .hidden {
     display: none;
 }
+
+.full-width {
+    width: 100%;
+}
