@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=s, initial-scale=1.0">
 
     <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' unpkg.com; style-src 'unsafe-inline' 'self' unpkg.com;"> -->
 
-    
+
     <!-- MapLibreGL JS  -->
     <link href='maplibre-gl-dist/maplibre-gl.css' rel='stylesheet' />
     <script defer src='maplibre-gl-dist/maplibre-gl.js'></script>
-    
+
     <!-- Bootstrap -->
     <link href="bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <script defer src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
@@ -19,68 +20,86 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="index.js" defer></script>
 </head>
+
 <body>
     <!-- <h1 class="h1">OSM Map Client</h1> -->
-    
+
     <div class="split left">
-      <div id='map' style='width: 100%; height: 100%;'></div>
+        <div id='map' style='width: 100%; height: 100%;'></div>
     </div>
     <div class="split right">
-      <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              General Settings
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <form action="">
-                <select class="form-select" aria-label="Map style selector">
-                  <option selected>Map Style</option>
-                  <option value="1">Default</option>
-                  <option value="2">Black and White</option>
-                  <option value="3">OSM Default</option>
-                </select>
-              </form>
-              <button onclick="preparePrint()" class="btn btn-danger">Print</button>
-              <div style="height: 15px;"></div>
-              <form action="">
-                <select class="form-select" aria-label="Map type selector">
-                  <option selected>Map Type</option>
-                  <option value="1">Default</option>
-                  <option value="2">3D Buildings</option>
-                  <option value="3">3D Landscape</option>
-                </select>
-              </form>
+        <button onclick="preparePrint()" class="btn btn-danger">Print</button>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        General Settings
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <form action="">
+                            <select class="form-select" aria-label="Map style selector">
+                                <option selected>Map Style</option>
+                                <option value="1">Default</option>
+                                <option value="2">Black and White</option>
+                                <option value="3">OSM Default</option>
+                            </select>
+                        </form>
+                        <div style="height: 15px;"></div>
+                        <form action="">
+                            <select class="form-select" aria-label="Map type selector">
+                                <option selected>Map Type</option>
+                                <option value="1">Default</option>
+                                <option value="2">3D Buildings</option>
+                                <option value="3">3D Landscape</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                Map Features
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Map Features
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-              Options
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Options
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    </body>
+</body>
+
 </html>
