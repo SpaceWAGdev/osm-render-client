@@ -17,7 +17,7 @@ function preparePrint() {
 console.log(maplibregl);
 var map = new maplibregl.Map({
   container: 'map',
-  style: 'map-styles/3dbuildings.json', // stylesheet location
+  style: 'https://api.maptiler.com/maps/toner-v2/style.json?key=yH0zK1xSaQ1U4Zu8y0wL', // stylesheet location
   // center: [-74.5, 40], // starting position [lng, lat]
   // zoom: 3, // starting zoom
   preserveDrawingBuffer: true
