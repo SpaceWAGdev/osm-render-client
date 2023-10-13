@@ -18,8 +18,8 @@ console.log(maplibregl);
 var map = new maplibregl.Map({
   container: 'map',
   style: 'map-styles/3dbuildings.json', // stylesheet location
-  center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 3, // starting zoom
+  // center: [-74.5, 40], // starting position [lng, lat]
+  // zoom: 3, // starting zoom
   preserveDrawingBuffer: true
 });
 
