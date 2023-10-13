@@ -74,3 +74,4 @@ map.on("load"), () => {
   console.log(map)
   addBuildings(map);
 }
+document.querySelector("#map-type-select").addEventListener("onchange", ()=>{addBuildings(map)}) 
