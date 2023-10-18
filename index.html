@@ -43,22 +43,14 @@
                             <button onclick="javascript:preparePrint()" type="button" class="btn btn-danger">Print</button>
                         </div>
 
+                        <!-- Map Style Selector -->
                         <div class="btn-group w-100 m-1" role="group" aria-label="Basic example">
-                            <button data-maptype="default" onclick="updateMapStyle()" class="btn btn-primary">Default</button>
-                            <button data-maptype="detailed" onclick="updateMapStyle()" type="button" class="btn btn-primary">Detailed</button>
-                            <button data-maptype="satellite" onclick="updateMapStyle()" type="button" class="btn btn-primary">Satellite</button>
-                            <button data-maptype="toner" onclick="updateMapStyle()" type="button" class="btn btn-primary">Toner</button>
+                            <button data-maptype="default" onclick="updateMapStyle(this)" class="btn btn-primary">Default</button>
+                            <button data-maptype="detailed" onclick="updateMapStyle(this)" type="button" class="btn btn-primary">Detailed</button>
+                            <button data-maptype="satellite" onclick="updateMapStyle(this)" type="button" class="btn btn-primary">Satellite</button>
+                            <button data-maptype="toner" onclick="updateMapStyle(this)" type="button" class="btn btn-primary">Toner</button>
                         </div>
-                        <!-- </form> -->
-                        <div style="height: 15px;"></div>
-                        <form action="">
-                            <select id="map-type-select" class="form-select" aria-label="Map type selector"
-                                <option selected>Map Type</option>
-                                <option value="1">Default</option>
-                                <option value="2">3D Buildings</option>
-                                <option value="3">3D Landscape</option>
-                            </select>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
