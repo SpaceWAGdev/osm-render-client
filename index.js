@@ -17,61 +17,20 @@ function preparePrint() {
 console.log(maplibregl);
 var map = new maplibregl.Map({
   container: 'map',
-  style: 'https://api.maptiler.com/maps/streets-v2/style.json?key=yH0zK1xSaQ1U4Zu8y0wL', // stylesheet location
+  style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=yH0zK1xSaQ1U4Zu8y0wL', // stylesheet location
   // center: [-74.5, 40], // starting position [lng, lat]
   // zoom: 3, // starting zoom
   preserveDrawingBuffer: true
 });
 
-function addBuildings(map) {
-
-  console.log("here")
-  const layers = map.getStyle().layers;
-
-  let labelLayerId;
-  for (let i = 0; i < layers.length; i++) {
-    if (layers[i].type === "symbol" && layers[i].layout["text-field"]) {
-      labelLayerId = layers[i].id;
+function updateMapStyle(element) {
+  switch (element.dataset.maptype) {
+    case "default":
+      
       break;
-    }
+    case "toner":
+      break;
+    default:
+      break;
   }
-
-  map.addLayer(
-    {
-      "id": "3d-buildings",
-      'source': 'openmaptiles',
-      'source-layer': 'building',
-      'filter': ['==', 'extrude', 'true'],
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        "fill-extrusion-color": "#aaa",
-        'fill-extrusion-height': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          15,
-          0,
-          15.05,
-          ['get', 'height']
-        ],
-        'fill-extrusion-base': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          15,
-          0,
-          15.05,
-          ['get', 'min_height']
-        ],
-        'fill-extrusion-opacity': 0.6
-      }
-    }
-  )
 }
-// map.on("load"), () => {
-
-//   console.log(map)
-//   addBuildings(map);
-// }
-// document.querySelector("#map-type-select").addEventListener("onchange", ()=>{addBuildings(map)}) 
