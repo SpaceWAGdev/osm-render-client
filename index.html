@@ -44,9 +44,10 @@
                         </div>
 
                         <div class="btn-group w-100 m-1" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Default Style</button>
-                            <button type="button" class="btn btn-primary">Toner</button>
-                            <button type="button" class="btn btn-primary">Satellite</button>
+                            <button data-maptype="default" onclick="updateMapStyle()" class="btn btn-primary">Default</button>
+                            <button data-maptype="detailed" onclick="updateMapStyle()" type="button" class="btn btn-primary">Detailed</button>
+                            <button data-maptype="satellite" onclick="updateMapStyle()" type="button" class="btn btn-primary">Satellite</button>
+                            <button data-maptype="toner" onclick="updateMapStyle()" type="button" class="btn btn-primary">Toner</button>
                         </div>
                         <!-- </form> -->
                         <div style="height: 15px;"></div>
